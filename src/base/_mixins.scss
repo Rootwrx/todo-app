@@ -1,0 +1,100 @@
+@mixin bg-fill($initial, $hover, $inverted: false) {
+  background: linear-gradient(
+    90deg,
+    $hover 0%,
+    $hover 50%,
+    $initial 50%,
+    $initial 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+
+  background-position: right bottom;
+  @if $inverted {
+    background-position: left bottom;
+  }
+  transition: background-position 0.25s ease-out;
+
+  &:hover {
+    background-position: left bottom;
+    @if $inverted {
+      background-position: right bottom;
+    }
+  }
+}
+
+// ========== MEDIA QUERY
+
+// Media queries
+$grid-breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  mobile: 375px,
+  desktop: 1440px,
+);
+
+@mixin media($size, $type: min) {
+  @if map-has-key($grid-breakpoints, $size) {
+    $width: map-get($grid-breakpoints, $size);
+
+    @if $type ==max {
+      $width: $width - 1;
+    }
+
+    @media only screen and (#{$type}-width : $width) {
+      @content;
+    }
+  }
+}
+
+@mixin media-between($lower, $upper) {
+  @if map-has-key($grid-breakpoints, $lower) and
+    map-has-key($grid-breakpoints, $upper)
+  {
+    $lower-breakpoint: map-get($grid-breakpoints, $lower);
+    $upper-breakpoint: map-get($grid-breakpoints, $upper);
+
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  }
+}
+
+//========== End of media Query
+
+@mixin fc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin fb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+%fc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%fb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin fade($type: in, $duration: 0.5s, $easing: ease-in-out) {
+  transition: $duration $easing;
+  @if $type == in {
+    pointer-events: all;
+    opacity: 1;
+  } @else if $type == out {
+    pointer-events: none;
+    opacity: 0;
+  }
+}

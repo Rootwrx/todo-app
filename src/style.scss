@@ -1,0 +1,10 @@
+@use "./vars" as *;
+@use "./base/base";
+@use "./reusable";
+
+// importing pages
+@import "./pages/main";
+// @import "./pages/header";
+// @import "./pages/hero";
+// @import "./pages/features";
+// @import "./pages/footer";

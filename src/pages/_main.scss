@@ -1,0 +1,100 @@
+.container {
+  margin-top: 100px;
+  max-width: 500px;
+  border-radius: 1rem;
+  --border-color: #999;
+
+  .input,
+  .tasks {
+    padding: 2rem;
+    background-color: hsl(from var(--clr-primary-dark-blue) h s l / 70%);
+    box-shadow: 1px 1px 5px var(--clr-primary-dark-blue-footer);
+    border-radius: 0.7rem;
+    border: 1px solid var(--border-color);
+  }
+  .tasks {
+    display: grid;
+    transition: height var(--transition-speed);
+    gap: 1rem;
+    .task {
+      animation: show 0.3s 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem;
+      border-radius: 0.5rem;
+      background-color: hsl(
+        from var(--clr-primary-dark-blue-footer) h s l / 10%
+      );
+      border: 1px solid var(--border-color);
+      transform-origin: top;
+
+      &.deleting {
+        animation: deleting 1s 1 linear;
+      }
+      .btn {
+        --clr: var(--clr-accent-cyan);
+        --hover-color: var(--clr-accent-blue);
+        border-radius: 0.3rem;
+        padding: 3px 7px;
+        border: 1px solid hsl(from var(--clr) h s l / 50%);
+        transition: var(--transition-speed);
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--clr);
+
+        &:hover {
+          background-color: var(--hover-color);
+          color: white;
+          border-color: var(--clr);
+        }
+      }
+      .delete-task {
+        --clr: var(--clr-accent-light-red);
+        --hover-color: var(--clr-accent-light-red);
+      }
+
+      .settings {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+  .input {
+    color: black;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    input {
+      flex-grow: 1;
+      border-radius: 5px;
+      background-color: white;
+      padding: 8px 1rem;
+    }
+    input,
+    button {
+      color: var(--clr-primary-dark-blue);
+      border: 2px solid red;
+    }
+    button {
+      background-color: white;
+      border-radius: 5px;
+      padding: 8px 1rem;
+    }
+  }
+}
+
+@keyframes show {
+  0% {
+    @include fade(out);
+    transform: scaleY(0.5);
+  }
+  100% {
+    @include fade(in);
+    transform: scaleY(1);
+  }
+}

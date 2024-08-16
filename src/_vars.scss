@@ -1,0 +1,100 @@
+@import "./base/mixins";
+
+// raleway
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+// poppins
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+// open sans
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  /* Colors */
+  /* Hue
+      red     = 0 or 360 
+      yellow  = 60   
+      green   = 120  
+      blue    = 240
+      magenta = 300
+  */
+  --clr-primary-dark-blue: hsl(217, 28%, 15%);
+  --clr-primary-dark-blue-main: hsl(218, 28%, 13%);
+  --clr-primary-dark-blue-footer: hsl(216, 53%, 9%);
+  --clr-primary-dark-blue-testimonials: hsl(219, 30%, 18%);
+
+  --clr-accent-cyan: hsl(176, 68%, 64%);
+  --clr-accent-blue: hsl(198, 60%, 50%);
+  --clr-accent-light-red: hsl(0, 100%, 63%);
+
+  --clr-neutral-white: hsl(0, 0%, 100%);
+
+  /* Gradients */
+  --gradient-cta: linear-gradient(
+    to right,
+    var(--clr-accent-cyan),
+    var(--clr-accent-blue)
+  );
+
+  /* Typography */
+  --fs-body: 14px;
+  --fs-small: 12px;
+  --fs-normal: 16px;
+  --fs-md: 20px;
+  --fs-h1: 64px;
+  --fs-h2: 40px;
+
+  --ff-headings: "Raleway", sans-serif;
+  --ff-body: "Open Sans", sans-serif;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 2rem; /* 32px */
+  --spacing-xl: 4rem; /* 64px */
+  --spacing-xxl: 5rem; /* 80px */
+
+  --spacing-responsive: var(--spacing-xs);
+
+  /* Border Radius */
+  --br-sm: 4px;
+  --br-md: 8px;
+  --br-lg: 16px;
+  --br-xl: 20px;
+  --br-xxl: 25px;
+
+  --br-pile: 200px;
+  --br-circle: 50%;
+
+  /* Header Height */
+  --header-height: 5rem;
+
+  /* Transition */
+  --transition-speed: 0.3s;
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    --clr-accent-cyan: hsl(176, 100%, 50%);
+    --clr-accent-blue: hsl(198, 100%, 50%);
+  }
+
+  /* Responsive Spacing */
+  @include media(sm) {
+    --spacing-sm: 0.5rem; /* 8px */
+  }
+  @include media(md) {
+    --spacing-md: 1rem; /* 16px */
+  }
+  @include media(lg) {
+    --spacing-lg: 2rem; /* 32px */
+  }
+  @include media(xl) {
+    --spacing-xl: 4rem; /* 64px */
+  }
+  @include media(xxl) {
+    --spacing-xl: 5rem; /* 64px */
+  }
+}

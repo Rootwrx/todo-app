@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+:root {
+  /* Colors */
+  /* Hue
+      red     = 0 or 360 
+      yellow  = 60   
+      green   = 120  
+      blue    = 240
+      magenta = 300
+  */
+  --clr-primary-dark-blue: hsl(217, 28%, 15%);
+  --clr-primary-dark-blue-main: hsl(218, 28%, 13%);
+  --clr-primary-dark-blue-footer: hsl(216, 53%, 9%);
+  --clr-primary-dark-blue-testimonials: hsl(219, 30%, 18%);
+  --clr-accent-cyan: hsl(176, 68%, 64%);
+  --clr-accent-blue: hsl(198, 60%, 50%);
+  --clr-accent-light-red: hsl(0, 100%, 63%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+  /* Gradients */
+  --gradient-cta: linear-gradient(
+    to right,
+    var(--clr-accent-cyan),
+    var(--clr-accent-blue)
+  );
+  /* Typography */
+  --fs-body: 14px;
+  --fs-small: 12px;
+  --fs-normal: 16px;
+  --fs-md: 20px;
+  --fs-h1: 64px;
+  --fs-h2: 40px;
+  --ff-headings: "Raleway", sans-serif;
+  --ff-body: "Open Sans", sans-serif;
+  --fw-normal: 400;
+  --fw-bold: 700;
+  /* Spacing */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 2rem; /* 32px */
+  --spacing-xl: 4rem; /* 64px */
+  --spacing-xxl: 5rem; /* 80px */
+  --spacing-responsive: var(--spacing-xs);
+  /* Border Radius */
+  --br-sm: 4px;
+  --br-md: 8px;
+  --br-lg: 16px;
+  --br-xl: 20px;
+  --br-xxl: 25px;
+  --br-pile: 200px;
+  --br-circle: 50%;
+  /* Header Height */
+  --header-height: 5rem;
+  /* Transition */
+  --transition-speed: 0.3s;
+  /* High Contrast Mode */
+  /* Responsive Spacing */
+}
+@media (prefers-contrast: high) {
+  :root {
+    --clr-accent-cyan: hsl(176, 100%, 50%);
+    --clr-accent-blue: hsl(198, 100%, 50%);
+  }
+}
+@media only screen and (min-width: 576px) {
+  :root {
+    --spacing-sm: 0.5rem; /* 8px */
+  }
+}
+@media only screen and (min-width: 768px) {
+  :root {
+    --spacing-md: 1rem; /* 16px */
+  }
+}
+@media only screen and (min-width: 992px) {
+  :root {
+    --spacing-lg: 2rem; /* 32px */
+  }
+}
+@media only screen and (min-width: 1200px) {
+  :root {
+    --spacing-xl: 4rem; /* 64px */
+  }
+}
+@media only screen and (min-width: 1400px) {
+  :root {
+    --spacing-xl: 5rem; /* 64px */
+  }
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-normal);
+  line-height: 1.5;
+  color: var(--clr-neutral-white);
+  background-color: var(--clr-primary-dark-blue-main);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+button,
+input,
+select,
+textarea {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  line-height: normal;
+}
+
+button::-webkit-input-placeholder {
+  text-transform: capitalize;
+}
+
+button::-moz-placeholder {
+  text-transform: capitalize;
+}
+
+button:-ms-input-placeholder {
+  text-transform: capitalize;
+}
+
+button::-ms-input-placeholder {
+  text-transform: capitalize;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+button::placeholder {
+  text-transform: capitalize;
+}
+
+img,
+video,
+svg {
+  height: auto;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+}
+
+button, input[type=submit] {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: none;
+}
+
+p {
+  line-height: 1.7;
+}
+
+input,
+button {
+  border: 1px solid #eee;
+  padding: 5px;
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  padding-right: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  margin-right: auto;
+  margin-left: auto;
+  height: 100%;
+  container-type: inline-size;
+}
+
+.container {
+  margin-top: 100px;
+  max-width: 500px;
+  border-radius: 1rem;
+  --border-color: #999;
+}
+.container .input,
+.container .tasks {
+  padding: 2rem;
+  background-color: hsl(from var(--clr-primary-dark-blue) h s l/70%);
+  -webkit-box-shadow: 1px 1px 5px var(--clr-primary-dark-blue-footer);
+          box-shadow: 1px 1px 5px var(--clr-primary-dark-blue-footer);
+  border-radius: 0.7rem;
+  border: 1px solid var(--border-color);
+}
+.container .tasks {
+  display: grid;
+  -webkit-transition: height var(--transition-speed);
+  transition: height var(--transition-speed);
+  gap: 1rem;
+}
+.container .tasks .task {
+  -webkit-animation: show 0.3s 1;
+          animation: show 0.3s 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsl(from var(--clr-primary-dark-blue-footer) h s l/10%);
+  border: 1px solid var(--border-color);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+.container .tasks .task.deleting {
+  -webkit-animation: deleting 1s 1 linear;
+          animation: deleting 1s 1 linear;
+}
+.container .tasks .task .btn {
+  --clr: var(--clr-accent-cyan);
+  --hover-color: var(--clr-accent-blue);
+  border-radius: 0.3rem;
+  padding: 3px 7px;
+  border: 1px solid hsl(from var(--clr) h s l/50%);
+  -webkit-transition: var(--transition-speed);
+  transition: var(--transition-speed);
+  font-size: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: var(--clr);
+}
+.container .tasks .task .btn:hover {
+  background-color: var(--hover-color);
+  color: white;
+  border-color: var(--clr);
+}
+.container .tasks .task .delete-task {
+  --clr: var(--clr-accent-light-red);
+  --hover-color: var(--clr-accent-light-red);
+}
+.container .tasks .task .settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+.container .input {
+  color: black;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .input input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-radius: 5px;
+  background-color: white;
+  padding: 8px 1rem;
+}
+.container .input input,
+.container .input button {
+  color: var(--clr-primary-dark-blue);
+  border: 2px solid red;
+}
+.container .input button {
+  background-color: white;
+  border-radius: 5px;
+  padding: 8px 1rem;
+}
+
+@-webkit-keyframes show {
+  0% {
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  100% {
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    pointer-events: all;
+    opacity: 1;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes show {
+  0% {
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  100% {
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    pointer-events: all;
+    opacity: 1;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}

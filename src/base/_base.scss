@@ -1,0 +1,81 @@
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-normal);
+  line-height: 1.5;
+  color: var(--clr-neutral-white);
+  background-color: var(--clr-primary-dark-blue-main);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+// Reset form elements
+button,
+input,
+select,
+textarea {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  line-height: normal;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+button::placeholder {
+  text-transform: capitalize;
+}
+
+img,
+video,
+svg {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+button,input[type=submit] {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: none;
+}
+
+p {
+  line-height: 1.7;
+}
+input,
+button {
+  border: 1px solid #eee;
+  padding: 5px;
+  outline: none;
+}
+
